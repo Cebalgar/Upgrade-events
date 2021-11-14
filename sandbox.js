@@ -1,44 +1,50 @@
 //1.1 Añade un botón a tu html con el id btnToClick y en tu javascript añade el evento click que ejecute un console log con la información del evento del click.
 
-function mostrarEventoJs(evento) {
-    console.log('Evento JS:', evento);
-}
-  
-  function addEventListener(){
-    document.getElementById("btn").addEventListener("click", mostrarEventoJs);
-  
-  }
+const boton = document.createElement("button");
+boton.setAttribute("id", "btnToClick");
+boton.innerHTML="Click";
+document.body.appendChild(boton);
 
-  window.onload = function() {
-  
-    addListeners();
-  }
+const botonClick= document.querySelector(".click");
+
+
+
+let clickToClick=function(evento){
+    console.log(botonClick.value);
+}
+
+boton.addEventListener("click", clickToClick);
 
 
 
 //1.2 Añade un evento 'focus' que ejecute un console.log con el valor del input.
-function mostrarEventoJs(evento) {
-    console.log('Evento JS:', evento);
-  }
-  function addEventListener(){
-    document.getElementsByClassName("focus").addEventListener("focus", input);
-  }
-  window.onload = function() {
-  
-    addListeners();
-  }
+
+const inputFocus = document.querySelector(".focus");
+
+
+inputFocus.addEventListener("focus",(evento)=>{
+
+    console.log(evento.target.value);
+
+});
+
+
 
 
  //1.3 Añade un evento 'input' que ejecute un console.log con el valor del input.
 
- function mostrarEventoJs(evento) {
-    console.log('Evento JS:', evento);
-  }
-  
-  function addEventListener(){
-    document.getElementsByTagName("input").addEventListener("input", input);
-  }
-    window.onload = function() {
-  
-        addListeners();
-      }
+ const inputValue = document.querySelector(".value");
+
+inputValue.addEventListener("input",(evento)=>{
+
+    console.log(evento.inputValue,value);
+    
+});
+
+
+
+//let valueClick=function(evento){
+  //console.log(inputValue.value);
+//}
+
+//boton.addEventListener("input", valueClick);
